@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
+//using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -99,6 +99,11 @@ public class Mov_Monst_1 : MonoBehaviour
                 EnMovimiento = false;
                 Camino1 = new NavMeshPath();
                 ElegirPatron();
+            }
+
+            if( _Estacion == 2)
+            {
+                this.GetComponent<CapsuleCollider>().enabled = true;
             }
         }
 

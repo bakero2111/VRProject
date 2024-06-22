@@ -52,6 +52,10 @@ public class RunaAObjetivo : MonoBehaviour
         Vector3[] puntosDeCamino = Objetivos.Select(obj => obj.transform.position).ToArray();
         Seguidor.transform.DOPath(puntosDeCamino, VelMovSeguidor, PathType.Linear);
     }
+    public void RegresarAlParent()
+    {
+        this.transform.parent = RunaMaster.transform.parent;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Runa/Objetivo")

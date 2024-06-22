@@ -17,7 +17,7 @@ public class DañoLuz : MonoBehaviour
     }
     private void Update()
     {
-        if (vida<=0&& vida>=-0.3f && EnDaño ==false)
+        if (vida<=0 && vida>=-0.5f && EnDaño ==false)
         {
             InvokeRepeating("IniciarDaño", 0, 0);
 
@@ -37,6 +37,6 @@ public class DañoLuz : MonoBehaviour
         yield return new WaitForSeconds(tempo);
         vida = DanhoLuz;
         EnDaño = false;
-        this.GetComponent<CapsuleCollider>().enabled = false;
+       // this.GetComponent<CapsuleCollider>().enabled = true;
     }
 }
