@@ -24,7 +24,7 @@ public class DañoLuz : MonoBehaviour
             EnDaño = true;
         }
     }
-    void IniciarDaño()
+    public void IniciarDaño()
     {
         Debug.Log("No Vida");
         PersonajeHuesos.SetTrigger("Stuneado");

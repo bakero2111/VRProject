@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Linq.Expressions;
@@ -7,8 +8,9 @@ using UnityEngine.AI;
 public class Mov_Monst_1 : MonoBehaviour
 {
     NavMeshAgent _Nav_Monster1;
-    
-    
+    public float AnimacioTiempo;
+    public Animator PersonajeHuesos;
+
     //Rigidbody Rbd1;
     NavMeshPath Camino1;
     int _Estacion = 0; //el punto que se encuentra actualmente dentro del patron de vigilancia
@@ -93,7 +95,14 @@ public class Mov_Monst_1 : MonoBehaviour
             {
                 _Estacion++;
             }
-            else
+            else if(_Estacion == Puntos.Count - 1)
+            {
+                _Estacion = 0;
+                EnMovimiento = false;
+                Camino1 = new NavMeshPath();
+                ElegirPatron();
+            }
+            else if(_Estacion> Puntos.Count - 1)
             {
                 _Estacion = 0;
                 EnMovimiento = false;
@@ -101,7 +110,7 @@ public class Mov_Monst_1 : MonoBehaviour
                 ElegirPatron();
             }
 
-            if( _Estacion == 2)
+            if( _Estacion <2)
             {
                 this.GetComponent<CapsuleCollider>().enabled = true;
             }
@@ -127,6 +136,10 @@ public class Mov_Monst_1 : MonoBehaviour
                 Camino1 = new NavMeshPath();
                 ElegirPatron();
             }
+            if (_Estacion < 2)
+            {
+                this.GetComponent<CapsuleCollider>().enabled = true;
+            }
         }
 
     }
@@ -149,6 +162,10 @@ public class Mov_Monst_1 : MonoBehaviour
                 Camino1 = new NavMeshPath();
                 ElegirPatron();
             }
+            if (_Estacion < 2)
+            {
+                this.GetComponent<CapsuleCollider>().enabled = true;
+            }
         }
     }
     void PatronCamino4()
@@ -169,6 +186,10 @@ public class Mov_Monst_1 : MonoBehaviour
                 EnMovimiento = false;
                 Camino1 = new NavMeshPath();
                 ElegirPatron();
+            }
+            if (_Estacion < 2)
+            {
+                this.GetComponent<CapsuleCollider>().enabled = true;
             }
         }
 
@@ -191,5 +212,13 @@ public class Mov_Monst_1 : MonoBehaviour
         EnDaño = false;
         _Nav_Monster1.isStopped = false;
         ElegirPatron();
+    }
+    IEnumerator MatarProtagonista()
+    {
+
+        yield return new WaitForSeconds(0.4f);
+        PersonajeHuesos.SetTrigger("Asesinar");
+        yield return new WaitForSeconds(AnimacioTiempo);
+        Debug.Log("Termino animacion");
     }
 }

@@ -27,6 +27,7 @@ public class RunaAObjetivo : MonoBehaviour
             //this.gameObject.SetActive(false);
             UltObjetivoxd.SetActive(false);
             RunaMaster.SubirPunto();
+            this.gameObject.SetActive(false);
             
         }
         else if(Objetivos.Count >= 2 && Objetivos.Count != NumObjetivo + 1) // en caso de que hayan dos objetivos a mas
@@ -68,9 +69,12 @@ public class RunaAObjetivo : MonoBehaviour
             AlcanzadosObj();
         }   
     }
-    IEnumerator EmpezarBucle()
+    public void ActivarCamino()
     {
-        SeguimientoFeedBack();
-        yield return new WaitForSeconds(1);
+        Objetivos[NumObjetivo].SetActive(true);
+    } //SE ACTIVA TODA PREVISUALIZACION PARA SEGUIR EL CAMINO
+    public void DesactivarCamino()
+    {
+        Objetivos[NumObjetivo].SetActive(false);
     }
 }
