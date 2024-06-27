@@ -47,7 +47,7 @@ public class Mov_Monst_1 : MonoBehaviour
             
         
     }
-    void ElegirPatron()
+    public void ElegirPatron()
     {
         if(!EnMovimiento)
         {
@@ -95,19 +95,10 @@ public class Mov_Monst_1 : MonoBehaviour
             {
                 _Estacion++;
             }
-            else if(_Estacion == Puntos.Count - 1)
+            else
             {
-                _Estacion = 0;
-                EnMovimiento = false;
-                Camino1 = new NavMeshPath();
-                ElegirPatron();
-            }
-            else if(_Estacion> Puntos.Count - 1)
-            {
-                _Estacion = 0;
-                EnMovimiento = false;
-                Camino1 = new NavMeshPath();
-                ElegirPatron();
+                StartCoroutine(MatarProtagonista());
+
             }
 
             if( _Estacion <2)
@@ -131,10 +122,8 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
-                _Estacion = 0;
-                EnMovimiento = false;
-                Camino1 = new NavMeshPath();
-                ElegirPatron();
+                StartCoroutine(MatarProtagonista());
+
             }
             if (_Estacion < 2)
             {
@@ -157,10 +146,8 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
-                _Estacion = 0;
-                EnMovimiento = false;
-                Camino1 = new NavMeshPath();
-                ElegirPatron();
+                StartCoroutine(MatarProtagonista());
+
             }
             if (_Estacion < 2)
             {
@@ -182,10 +169,9 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
-                _Estacion = 0;
-                EnMovimiento = false;
-                Camino1 = new NavMeshPath();
-                ElegirPatron();
+                StartCoroutine(MatarProtagonista());
+
+
             }
             if (_Estacion < 2)
             {
@@ -215,10 +201,12 @@ public class Mov_Monst_1 : MonoBehaviour
     }
     IEnumerator MatarProtagonista()
     {
-
-        yield return new WaitForSeconds(0.4f);
-        PersonajeHuesos.SetTrigger("Asesinar");
-        yield return new WaitForSeconds(AnimacioTiempo);
-        Debug.Log("Termino animacion");
+        EnDaño = true;
+        _Estacion = 0;
+        EnMovimiento = false;
+        Camino1 = new NavMeshPath();
+        yield return new WaitForSeconds(4f);
+        EnDaño = false;
+        ElegirPatron();
     }
 }

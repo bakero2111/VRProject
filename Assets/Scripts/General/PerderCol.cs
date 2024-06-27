@@ -1,26 +1,36 @@
-using DG.Tweening;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class PerderCol : MonoBehaviour
 {
-    public GameObject ObjMira;
-    public GameObject JugadorCam;
-    public GameObject JugadorTotal;
-    public GameObject ManoMonster;
-    public float VelGiro;
-    public bool LlevarseSujeto;
-    private void Update()
-    {
-        if (LlevarseSujeto)
-            JugadorTotal.transform.parent = ManoMonster.transform;
-    }
-    public void Perder()
-    {
-        JugadorCam.GetComponent<TrackedPoseDriver>().trackingType = TrackedPoseDriver.TrackingType.PositionOnly;
-        JugadorCam.transform.DORotate(ObjMira.transform.position - JugadorCam.transform.position,VelGiro);
-        
-    }
     
+    public GameObject ObjMira;
+    public GameObject ObjMira2;
+    public GameObject JugadorCam;
+    public float VelGiro;
+    public GameObject CuartoBoss1;
+    public GameObject CuartoBoss2;
+    public void PerderMonster1()
+    {
+        StartCoroutine(TransicionCuarto1());
+    }
+    public void PerderMonster2()
+    {
+        StartCoroutine(TransicionCuarto2());
+    }
+    IEnumerator TransicionCuarto1()
+    {
+
+        yield return new WaitForSeconds(1.5f);
+        CuartoBoss1.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
+        CuartoBoss1.SetActive(false);
+    }
+    IEnumerator TransicionCuarto2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        CuartoBoss2.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
+        CuartoBoss2.SetActive(false);
+    }
 }

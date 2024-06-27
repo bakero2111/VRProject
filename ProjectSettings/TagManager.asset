@@ -9,6 +9,7 @@ TagManager:
   - Monster2
   - Runa/Objetivo
   - Runa/Objeto
+  - Perder
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - RunaObjeto
   - ObjetivoRuna
   - Paredes
-  - 
+  - ColPerderEnemy
   - 
   - 
   - 

@@ -1,4 +1,4 @@
-﻿Shader "TNTC/Disintegration"{
+﻿Shader "ShaderParti/Disintegration"{
 
     Properties{
         _MainTex ("Texture", 2D) = "white" {}
