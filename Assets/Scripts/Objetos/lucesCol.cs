@@ -8,8 +8,14 @@ public class lucesCol : MonoBehaviour
     {
         if (other.gameObject.tag == "Monster1")
         {
-            if(other.GetComponent<Da�oLuz>().vida>=0)
-            other.GetComponent<Da�oLuz>().vida--;
+            
+            if(other.GetComponent<DañoLuz>().vida>=0)
+            {
+                if(!other.GetComponent<DañoLuz>().EnDanho){
+            other.GetComponent<DañoLuz>().BajoLuz =true;
+                }
+            other.GetComponent<DañoLuz>().vida--;
+            }
         }
     }
 }

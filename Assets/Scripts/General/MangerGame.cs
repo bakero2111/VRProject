@@ -42,7 +42,7 @@ public class MangerGame : MonoBehaviour
     }
     public void MatarEnemigoFin()
     {
-        Enemigo1.GetComponent<DañoLuz>().IniciarDaño();
+        //Enemigo1.GetComponent<DaÃ±oLuz>().IniciarDanho();
         StartCoroutine(Ganar());
     }
     IEnumerator Ganar()

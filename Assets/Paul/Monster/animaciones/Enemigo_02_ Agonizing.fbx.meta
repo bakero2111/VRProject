@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af64a83a945a5f04e91d0038ccf9e274
+guid: 8d5e4211239c0ff4aa0674a4aa3ca00d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Grito
+      name: mixamo.com
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 84
+      firstFrame: 13
+      lastFrame: 108
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

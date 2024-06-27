@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DañoLuz : MonoBehaviour
 {
@@ -8,23 +9,38 @@ public class DañoLuz : MonoBehaviour
     public float DanhoLuz;
     public float vida;
     public int tiempoFeddBack;
-
-    bool EnDaño = false;
+    public bool BajoLuz;
+    public bool EnDanho = false;
     public Animator PersonajeHuesos;
+    float VelGuardada;
+    float VelCambiante;
     private void Start()
     {
         vida = DanhoLuz;
+        VelGuardada=this.gameObject.GetComponent<NavMeshAgent>().speed;
+        VelCambiante= VelGuardada;
     }
     private void Update()
     {
-        if (vida<=0 && vida>=-0.5f && EnDaño ==false)
+        if (vida<=0 && vida>=-1.5f && EnDanho ==false)
         {
-            InvokeRepeating("IniciarDaño", 0, 0);
+            InvokeRepeating("IniciarDanho", 0, 0);
 
-            EnDaño = true;
+            EnDanho = true;
+            BajoLuz=false;
+        }
+        if(BajoLuz&&!EnDanho)
+        {
+            this.gameObject.GetComponent<NavMeshAgent>().speed = 0.78f;
+        }
+        else if(BajoLuz&&EnDanho){
+            this.gameObject.GetComponent<NavMeshAgent>().speed = VelGuardada+1.5f;
+        }
+        else if(!BajoLuz&&!EnDanho){
+            this.gameObject.GetComponent<NavMeshAgent>().speed = VelGuardada;
         }
     }
-    public void IniciarDaño()
+    public void IniciarDanho()
     {
         Debug.Log("No Vida");
         PersonajeHuesos.SetTrigger("Stuneado");
@@ -36,7 +52,8 @@ public class DañoLuz : MonoBehaviour
     {
         yield return new WaitForSeconds(tempo);
         vida = DanhoLuz;
-        EnDaño = false;
+        
+        EnDanho = false;
        // this.GetComponent<CapsuleCollider>().enabled = true;
     }
 }

@@ -10,6 +10,7 @@ public class PrenderLuz : MonoBehaviour
     Animator _anim;
     InputDevice TargetDivice;
     public InputActionProperty ActivarLinternaCntrol;
+    public InputActionProperty Derecha_ActivarLinternaCntrol;
 
 
     public GameObject ColLinterna;
@@ -101,71 +102,20 @@ public class PrenderLuz : MonoBehaviour
     }
     public void PrenderLinterna()
     {
-        /*
-        TargetDivice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue);
-        {
-            if (triggerValue > 0.1f)
-            {
-                ColLinterna.SetActive(true);
-            }
-
-        }
-        */
-        /*
+       
         float triggerValue = ActivarLinternaCntrol.action.ReadValue<float>();
-        if (triggerValue >= 0.1f)
+        float triggerValueDere = Derecha_ActivarLinternaCntrol.action.ReadValue<float>();
+        if (triggerValue >= 0.1f|| triggerValueDere>=0.1f)
         {
             ColLinterna.SetActive(true);
             Prendido = true;
         }
-        else if(triggerValue < 0.1f&&Prendido)
+        else if((triggerValue < 0.1f|| triggerValueDere<0.1f)&&Prendido)
         {
             
             _anim.SetTrigger("Apagar");
             StartCoroutine(LinternaApagadoNum());
         }
-        */
-        //
-        
-       // float triggerValue2d = ActivarLinternaCntrol.action.ReadValue<float>();
-        /*
-        if (triggerValue)
-        {
-            ColLinterna.SetActive(true);
-            Prendido = true;
-        }
-        else if(!triggerValue&&Prendido)
-        {
-            
-            _anim.SetTrigger("Apagar");
-            StartCoroutine(LinternaApagadoNum());
-        }
-        */
-        float triggerValue = ActivarLinternaCntrol.action.ReadValue<float>();
-        if (triggerValue >= 0.1f)
-        {
-            ColLinterna.SetActive(true);
-            Prendido = true;
-        }
-        else if(triggerValue < 0.1f&&Prendido)
-        {
-            
-            _anim.SetTrigger("Apagar");
-            StartCoroutine(LinternaApagadoNum());
-        }
-        
-        /*
-        if (Input.GetKeyDown(KeyCode.Mouse0) && BateriaPorcent >0)
-        {
-            ColLinterna.SetActive(true);
-            Prendido = true;
-        }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            ColLinterna.SetActive(false);
-            Prendido = false;
-        }
-        */
     }
     public void ApagarLinterna()
     {

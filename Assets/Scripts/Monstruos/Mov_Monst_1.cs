@@ -25,7 +25,7 @@ public class Mov_Monst_1 : MonoBehaviour
     public List<GameObject> PuntosCuarto;
 
 
-    bool EnDaño=false;
+    bool EnDanho=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +40,7 @@ public class Mov_Monst_1 : MonoBehaviour
     {
         //Rbd1.MovePosition(Puntos[0].transform.position);
         //_Nav_Monster1.Move();
-        if (!EnDaño)
+        if (!EnDanho)
         {
             ElegirPatron();
         }
@@ -88,6 +88,7 @@ public class Mov_Monst_1 : MonoBehaviour
         EnMovimiento = true;
         NavMesh.CalculatePath(this.transform.position, Puntos[_Estacion].transform.position, NavMesh.AllAreas, Camino1);
         _Nav_Monster1.SetPath(Camino1);
+        
         distanciaPointo = Vector3.Distance(this.transform.position, Puntos[_Estacion].transform.position);
         if (distanciaPointo <= _Nav_Monster1.stoppingDistance * 2)
         {
@@ -97,6 +98,8 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
+                
+                Debug.Log("llego");
                 StartCoroutine(MatarProtagonista());
 
             }
@@ -122,6 +125,7 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
+                Debug.Log("llego");
                 StartCoroutine(MatarProtagonista());
 
             }
@@ -146,6 +150,8 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
+                
+                Debug.Log("llego");
                 StartCoroutine(MatarProtagonista());
 
             }
@@ -169,6 +175,8 @@ public class Mov_Monst_1 : MonoBehaviour
             }
             else
             {
+                
+                Debug.Log("llego");
                 StartCoroutine(MatarProtagonista());
 
 
@@ -180,9 +188,9 @@ public class Mov_Monst_1 : MonoBehaviour
         }
 
     }
-    public void DetenerBajoDaño(int minitempo)
+    public void DetenerBajoDaÃ±o(int minitempo)
     {
-        EnDaño = true;
+        EnDanho = true;
         EnMovimiento = false;
         Camino1 = new NavMeshPath();
         _Estacion = 0;
@@ -195,18 +203,22 @@ public class Mov_Monst_1 : MonoBehaviour
         _Nav_Monster1.isStopped = true;
 
         yield return new WaitForSeconds(tempo);
-        EnDaño = false;
+        EnDanho = false;
         _Nav_Monster1.isStopped = false;
         ElegirPatron();
     }
     IEnumerator MatarProtagonista()
     {
-        EnDaño = true;
+        EnDanho = true;
         _Estacion = 0;
         EnMovimiento = false;
         Camino1 = new NavMeshPath();
-        yield return new WaitForSeconds(4f);
-        EnDaño = false;
+        yield return new WaitForSeconds(1f);
+        PersonajeHuesos.gameObject.SetActive(false);
+        EnDanho = false;
         ElegirPatron();
+        yield return new WaitForSeconds(2f);
+        PersonajeHuesos.gameObject.SetActive(true);
+    
     }
 }
