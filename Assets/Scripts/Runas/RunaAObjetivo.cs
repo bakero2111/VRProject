@@ -14,6 +14,7 @@ public class RunaAObjetivo : MonoBehaviour
     public float VelMovSeguidor;
     GameObject UltObjetivoxd;
     public GameObject ParicMagic;
+    public GameObject ColisionesGen;
     void AlcanzadosObj()
     {
         
@@ -73,11 +74,13 @@ public class RunaAObjetivo : MonoBehaviour
     public void ActivarCamino()
     {
         ParicMagic.SetActive(true);
+        ColisionesGen.SetActive(true);
         Objetivos[NumObjetivo].SetActive(true);
     } //SE ACTIVA TODA PREVISUALIZACION PARA SEGUIR EL CAMINO
     public void DesactivarCamino()
     {
         //ParicMagic.SetActive(false);
+        ColisionesGen.SetActive(false);
         Objetivos[NumObjetivo].SetActive(false);
     }
 }

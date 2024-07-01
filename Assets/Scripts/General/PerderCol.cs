@@ -48,7 +48,7 @@ public class PerderCol : MonoBehaviour
     {
         Transicion_Jugador.SetActive(true);
         yield return new WaitForSeconds(1f);
-        ApagarVela();
+        
         CuartoBoss1.SetActive(true);
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
@@ -58,13 +58,13 @@ public class PerderCol : MonoBehaviour
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4.5f;
         CuartoBoss1.SetActive(false);
         yield return new WaitForSeconds(0.4f);
+        ApagarVela();
         Transicion_Jugador.SetActive(false);
     }
     IEnumerator TransicionCuarto2()
     {
         Transicion_Jugador.SetActive(true);
         yield return new WaitForSeconds(1f);
-        ApagarVela();
         CuartoBoss2.SetActive(true);
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
@@ -74,6 +74,7 @@ public class PerderCol : MonoBehaviour
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4.5f;
         CuartoBoss2.SetActive(false);
         yield return new WaitForSeconds(0.4f);
+        ApagarVela();
         Transicion_Jugador.SetActive(false);
     }
 }
