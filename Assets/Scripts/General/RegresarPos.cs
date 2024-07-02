@@ -17,7 +17,6 @@ public class RegresarPos : MonoBehaviour
      void OnCollisionEnter(Collision ColisionTel)
      {
         if(ColisionTel.gameObject.tag=="Piso"){
-            Debug.Log("asda");
             rbd.Sleep();
             
             this.transform.position = Inicio;
