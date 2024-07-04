@@ -15,6 +15,11 @@ public class RunaAObjetivo : MonoBehaviour
     GameObject UltObjetivoxd;
     public GameObject ParicMagic;
     public GameObject ColisionesGen;
+    [Header("Señalizacion")]
+    public GameObject Flecha;
+    void Start(){
+        Flecha.transform.right = Objetivos[NumObjetivo].transform.position- this.transform.position ;
+    }
     void AlcanzadosObj()
     {
         
@@ -35,6 +40,7 @@ public class RunaAObjetivo : MonoBehaviour
         else if(Objetivos.Count >= 2 && Objetivos.Count != NumObjetivo + 1) // en caso de que hayan dos objetivos a mas
         {
             //Objetivos[NumObjetivo].SetActive(false);
+            Flecha.transform.right = Objetivos[NumObjetivo].transform.position- this.transform.position ;
             Objetivos[NumObjetivo].GetComponent<MeshRenderer>().enabled = false;
             Objetivos[NumObjetivo].GetComponent<BoxCollider>().enabled=false;
             NumObjetivo++;
@@ -76,6 +82,7 @@ public class RunaAObjetivo : MonoBehaviour
         ParicMagic.SetActive(true);
         ColisionesGen.SetActive(true);
         Objetivos[NumObjetivo].SetActive(true);
+        Flecha.transform.right = Objetivos[NumObjetivo].transform.position- this.transform.position ;
     } //SE ACTIVA TODA PREVISUALIZACION PARA SEGUIR EL CAMINO
     public void DesactivarCamino()
     {

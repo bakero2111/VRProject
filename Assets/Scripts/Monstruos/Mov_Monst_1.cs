@@ -26,6 +26,10 @@ public class Mov_Monst_1 : MonoBehaviour
 
 
     bool EnDanho=false;
+    [Header("Secuencia")]
+    public bool SecuenciaActv=false;
+    public GameObject Segundo;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,9 @@ public class Mov_Monst_1 : MonoBehaviour
         //veltotal = _Nav_Monster1.speed;
         //Rbd1 = this.GetComponent<Rigidbody>();
         Camino1 = new NavMeshPath();
+        if(SecuenciaActv){
+            StartCoroutine(SecuenciaEnemigos());
+        }
     }
 
     // Update is called once per frame
@@ -220,5 +227,9 @@ public class Mov_Monst_1 : MonoBehaviour
         yield return new WaitForSeconds(2f);
         PersonajeHuesos.gameObject.SetActive(true);
     
+    }
+    IEnumerator SecuenciaEnemigos(){
+        yield return new WaitForSeconds(20f);
+        Segundo.SetActive(true);
     }
 }

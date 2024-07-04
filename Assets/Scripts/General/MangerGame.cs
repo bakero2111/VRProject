@@ -76,7 +76,7 @@ public class MangerGame : MonoBehaviour
         EnemigoText2.GetComponent<Animator>().enabled = true;
         CabezaText2.GetComponent<Animator>().enabled = true;
         CuernosText2.GetComponent<Animator>().enabled = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3.5f);
         Enemigo1.SetActive(false);
         Enemigo2.SetActive(false);
         yield return new WaitForSeconds(2);

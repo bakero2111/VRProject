@@ -16,17 +16,27 @@ public class PerderCol : MonoBehaviour
     public GameObject Monstruo2;
     public Transform PosInicial2;
     [Header("Jugador")]
+    public GameObject JugadorCompleto;
     public GameObject Transicion_Jugador;
     public float VelTransicion;
+    public AudioListener MicroPrincipal;
+    public AudioListener Sala1Micro;
+    public AudioListener Sala2Micro;
+    public AudioListener Sala3Micro;
+    public Transform PosInicialaea;
     [Header("sala1")]
     public GameObject CuartoBoss1;
+    public Transform Pos1Sala;
     public GameObject Sala1Transicion;
     [Header("sala2")]
     public GameObject CuartoBoss2;
+    public Transform Pos2Sala;
     public GameObject Sala2Transicion;
-    [Header("sala2")]
+    [Header("salaPerderFinal")]
     public GameObject CuartoPerderFinal;
+    public Transform PosFinalSala;
     public GameObject PantallaPerder;
+    public GameObject SimbolosTotalesParent;
     private void Start()
     {
         Vez = Velas.Count;
@@ -70,50 +80,79 @@ public class PerderCol : MonoBehaviour
     }
     IEnumerator TransicionCuarto1()
     {
+       // MicroPrincipal.enabled = false;
         Transicion_Jugador.SetActive(true);
         yield return new WaitForSeconds(1f);
         ApagarVela();
         yield return new WaitForSeconds(0.2f);
+        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
+        JugadorCompleto.transform.position= Pos1Sala.position;
         CuartoBoss1.SetActive(true);
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
-        yield return new WaitForSeconds(2.85f);
-        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
+         yield return new WaitForSeconds(1f);
+         Transicion_Jugador.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        Transicion_Jugador.SetActive(true);
+        JugadorCompleto.transform.position= PosInicialaea.position;
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2.8f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4.5f;
+        yield return new WaitForSeconds(0.2f);
         CuartoBoss1.SetActive(false);
+        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         yield return new WaitForSeconds(0.4f);
+        MicroPrincipal.enabled = true;
         Transicion_Jugador.SetActive(false);
     }
     IEnumerator TransicionCuarto2()
     {
+        //MicroPrincipal.enabled = false;
         Transicion_Jugador.SetActive(true);
         yield return new WaitForSeconds(1f);
         ApagarVela();
         yield return new WaitForSeconds(0.2f);
+        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
+        JugadorCompleto.transform.position= Pos2Sala.position;
         CuartoBoss2.SetActive(true);
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 7f;
-        yield return new WaitForSeconds(2.85f);
-        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
+         yield return new WaitForSeconds(1f);
+         Transicion_Jugador.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        
+        JugadorCompleto.transform.position= PosInicialaea.position;
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2.8f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4.5f;
+        yield return new WaitForSeconds(0.2f);
+        Transicion_Jugador.SetActive(true);
         CuartoBoss2.SetActive(false);
+        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         yield return new WaitForSeconds(0.4f);
+        MicroPrincipal.enabled = true;
         Transicion_Jugador.SetActive(false);
     }
     IEnumerator TransicionFinalPerder()
     {
         Transicion_Jugador.SetActive(true);
+        //MicroPrincipal.enabled = false;
         yield return new WaitForSeconds(1f);
+        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         CuartoPerderFinal.SetActive(true);
+        JugadorCompleto.transform.position= PosFinalSala.position;
         Monstruo1.SetActive(false);
         Monstruo2.SetActive(false);
-        yield return new WaitForSeconds(2.85f);
+        yield return new WaitForSeconds(1f);
+         Transicion_Jugador.SetActive(false);
+        yield return new WaitForSeconds(2f);
         PantallaPerder.SetActive(true);
-        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
+        Transicion_Jugador.SetActive(true);
+        JugadorCompleto.transform.position= PosInicialaea.position;
+        yield return new WaitForSeconds(0.2f);
         CuartoPerderFinal.SetActive(false);
+        Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         yield return new WaitForSeconds(0.4f);
+        //MicroPrincipal.enabled = true;
         Transicion_Jugador.SetActive(false);
+        SimbolosTotalesParent.SetActive(false);
     }
 }
