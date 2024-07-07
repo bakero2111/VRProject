@@ -21,6 +21,8 @@ public class MangerGame : MonoBehaviour
     public GameObject PantallaGanar;
 
     [Header("Hora")]
+    public AudioClip Campanero;
+    AudioSource Bocina;
     bool ContadorPrendido=true;
     public float TiempoTotal;
     public float tiempoGuardado;
@@ -31,6 +33,8 @@ public class MangerGame : MonoBehaviour
         tiempoGuardado = TiempoTotal;
         ContadorPrendido = true;
         TiempoTotal = tiempoGuardado / 12;
+        Bocina= this.GetComponent<AudioSource>();
+        
     }
     private void FixedUpdate()
     {
@@ -54,6 +58,10 @@ public class MangerGame : MonoBehaviour
     {
         VelasHorario[Hora].SetActive(false);
         Hora++;
+        if(Hora%2==0)
+        {
+            Bocina.PlayOneShot(Campanero);
+        }
     }
     public void MatarEnemigoFin()
     {
