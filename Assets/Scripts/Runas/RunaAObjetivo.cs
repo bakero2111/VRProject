@@ -17,8 +17,11 @@ public class RunaAObjetivo : MonoBehaviour
     public GameObject ColisionesGen;
     [Header("Señalizacion")]
     public GameObject Flecha;
+    // si se lo lleva lejos
+    Vector3 PosInicial;
     void Start(){
         Flecha.transform.forward = Objetivos[NumObjetivo].transform.position - Flecha.transform.position;
+        PosInicial = Flecha.transform.position;
     }
     void AlcanzadosObj()
     {
@@ -92,5 +95,9 @@ public class RunaAObjetivo : MonoBehaviour
         //ParicMagic.SetActive(false);
         ColisionesGen.SetActive(false);
         Objetivos[NumObjetivo].SetActive(false);
+        if (Vector3.Distance(this.transform.position, PosInicial) > 10f)
+        {
+            this.transform.position = PosInicial;
+        }
     }
 }

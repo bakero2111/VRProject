@@ -9,6 +9,7 @@ public class Desintegracion : MonoBehaviour
     public bool Eliminar;
     public GameObject Padre;
     public SimbolMaster ObjParentFinal;
+    public bool Primero=false;
     private void Start()
     {
         Animacion= GetComponent<Animator>();
@@ -33,6 +34,10 @@ public class Desintegracion : MonoBehaviour
         yield return new WaitForSeconds(4);
         Destroy(Padre);
         ObjParentFinal.ActivarSiguienteSimbolo();
+        if (Primero)
+        {
+            ObjParentFinal.IniciarJuego();
+        }
         
     }
 }

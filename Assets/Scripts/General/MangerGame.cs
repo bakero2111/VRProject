@@ -23,7 +23,7 @@ public class MangerGame : MonoBehaviour
     [Header("Hora")]
     public AudioClip Campanero;
     AudioSource Bocina;
-    bool ContadorPrendido=true;
+    public bool ContadorPrendido=false;
     public float TiempoTotal;
     public float tiempoGuardado;
     public List<GameObject> VelasHorario;
@@ -31,7 +31,7 @@ public class MangerGame : MonoBehaviour
     private void Start()
     {
         tiempoGuardado = TiempoTotal;
-        ContadorPrendido = true;
+        //ContadorPrendido = true;
         TiempoTotal = tiempoGuardado / 12;
         Bocina= this.GetComponent<AudioSource>();
         
@@ -66,6 +66,10 @@ public class MangerGame : MonoBehaviour
     public void MatarEnemigoFin()
     {
         //Enemigo1.GetComponent<DañoLuz>().IniciarDanho();
+        BossAnim1.GetComponent<CapsuleCollider>().enabled = false;
+        BossAnim2.GetComponent<CapsuleCollider>().enabled = false;
+        Enemigo1.GetComponent<CapsuleCollider>().enabled = false;
+        Enemigo2.GetComponent<CapsuleCollider>().enabled = false;
         Enemigo1.GetComponent<NavMeshAgent>().speed = 0.15f;
         Enemigo2.GetComponent<NavMeshAgent>().speed = 0.15f;
         EnemigoText1.GetComponent<SkinnedMeshRenderer>().material = Desinte1;
