@@ -11,7 +11,7 @@ public class SimbolMaster : MonoBehaviour
     // Update is called once per frame
     public void ActivarSiguienteSimbolo()
     {
-        if(SimbolosObj[instanciaSimbolo] !=null && instanciaSimbolo<SimbolosObj.Count){
+        if(SimbolosObj[instanciaSimbolo] !=null && instanciaSimbolo<SimbolosObj.Count-1){
             SimbolosObj[instanciaSimbolo+1].SetActive(true);
             instanciaSimbolo++;
             

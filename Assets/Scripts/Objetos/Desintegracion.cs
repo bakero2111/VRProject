@@ -18,7 +18,8 @@ public class Desintegracion : MonoBehaviour
        
     }
     public void Desintegrar(){
-        Animacion.enabled = true;
+        //Animacion.enabled = true;
+        Animacion.SetTrigger("Eliminar");
         StartCoroutine(EliminarObj());
     }
     /*
