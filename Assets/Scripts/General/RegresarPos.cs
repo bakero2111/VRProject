@@ -16,7 +16,8 @@ public class RegresarPos : MonoBehaviour
     // Update is called once per frame
      void OnCollisionEnter(Collision ColisionTel)
      {
-        if(ColisionTel.gameObject.tag=="Piso"){
+        if(ColisionTel.gameObject.tag=="Piso")
+        {
             rbd.Sleep();
             
             this.transform.position = Inicio;

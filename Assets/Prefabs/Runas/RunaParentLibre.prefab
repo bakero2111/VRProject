@@ -1623,6 +1623,8 @@ MonoBehaviour:
   ParicMagic: {fileID: 2112784346108144246}
   ColisionesGen: {fileID: 2535841328409125376}
   Flecha: {fileID: 3044941929422306367}
+  particula_Explotion: {fileID: 5842801772186199253, guid: f438f88810c14db4ea1d589815fc1ad6, type: 3}
+  tink: {fileID: 8300000, guid: d6b49b6b18c75b84d87416e0405f2341, type: 3}
 --- !u!1 &8066766933450159525
 GameObject:
   m_ObjectHideFlags: 0

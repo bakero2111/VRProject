@@ -13,6 +13,7 @@ public class MatarProta1 : MonoBehaviour
        {
          if(!Monster2){
           Manager_MovJugador.PerderMonster1();
+                
          }
          else if(Monster2){
             Manager_MovJugador.PerderMonster2();

@@ -17,11 +17,16 @@ public class RunaAObjetivo : MonoBehaviour
     public GameObject ColisionesGen;
     [Header("Señalizacion")]
     public GameObject Flecha;
+    [Header("FeedBack")]
+    public GameObject particula_Explotion;
+    public AudioClip tink;
+    AudioSource Sonido;
     // si se lo lleva lejos
     Vector3 PosInicial;
     void Start(){
         Flecha.transform.forward = Objetivos[NumObjetivo].transform.position - Flecha.transform.position;
         PosInicial = Flecha.transform.position;
+        Sonido=RunaMaster.GetComponent<AudioSource>();
     }
     void AlcanzadosObj()
     {
@@ -38,7 +43,8 @@ public class RunaAObjetivo : MonoBehaviour
             UltObjetivoxd.SetActive(false);
             RunaMaster.SubirPunto();
             this.gameObject.SetActive(false);
-            
+            Instantiate(particula_Explotion, transform.position, Quaternion.identity);
+
         }
         else if(Objetivos.Count >= 2 && Objetivos.Count != NumObjetivo + 1) // en caso de que hayan dos objetivos a mas
         {
@@ -49,6 +55,7 @@ public class RunaAObjetivo : MonoBehaviour
             NumObjetivo++;
             Objetivos[NumObjetivo].SetActive(true);
             Flecha.GetComponent<FlechaFeed>().ObjetivoFlecha = Objetivos[NumObjetivo];
+            Instantiate(particula_Explotion, transform.position, Quaternion.identity);
         }
     }
     void SeguimientoFeedBack()
@@ -73,6 +80,7 @@ public class RunaAObjetivo : MonoBehaviour
     {
         if (collision.gameObject.tag == "Runa/Objetivo")
         {
+            Sonido.PlayOneShot(tink);
             if (Objetivos.Count == NumObjetivo + 1)
             {
                 UltObjetivoxd = collision.gameObject;

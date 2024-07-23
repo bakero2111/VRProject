@@ -44,9 +44,9 @@ public class PerderCol : MonoBehaviour
     
     public void PerderMonster1()
     {
-        
         if (Oportunidades < Vez && !CuartoBoss1.activeSelf && !CuartoBoss2.activeSelf)
         {
+            Monstruo2.GetComponent<DañoLuz>().IniciarDanho();
             StartCoroutine(TransicionCuarto1());
         }
         else if (Oportunidades >= Vez && !Perdida && !CuartoBoss1.activeSelf && !CuartoBoss2.activeSelf)
@@ -57,9 +57,9 @@ public class PerderCol : MonoBehaviour
     }
     public void PerderMonster2()
     {
-        
         if (Oportunidades < Vez && !CuartoBoss1.activeSelf&&!CuartoBoss2.activeSelf)
         {
+            Monstruo1.GetComponent<DañoLuz>().IniciarDanho();
             StartCoroutine(TransicionCuarto2());
         }
         else if(Oportunidades >= Vez && !Perdida && !CuartoBoss1.activeSelf && !CuartoBoss2.activeSelf)
@@ -73,7 +73,8 @@ public class PerderCol : MonoBehaviour
     {
         if (Oportunidades < Vez)
         {
-            Velas[Oportunidades].SetActive(false);
+            //VelasHorario[Hora].GetComponent<ApagarVela>().StartCoroutine(VelasHorario[Hora].GetComponent<ApagarVela>().SecuenciaApagar());
+            Velas[Oportunidades].GetComponent<ApagarVela>().StartCoroutine(Velas[Oportunidades].GetComponent<ApagarVela>().SecuenciaApagar());
             Oportunidades++;
         }
         
@@ -83,7 +84,7 @@ public class PerderCol : MonoBehaviour
        // MicroPrincipal.enabled = false;
         Transicion_Jugador.SetActive(true);
         yield return new WaitForSeconds(1f);
-        ApagarVela();
+        
         yield return new WaitForSeconds(0.2f);
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         JugadorCompleto.transform.position= Pos1Sala.position;
@@ -100,16 +101,18 @@ public class PerderCol : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         CuartoBoss1.SetActive(false);
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
+        ApagarVela();
         yield return new WaitForSeconds(0.4f);
         MicroPrincipal.enabled = true;
         Transicion_Jugador.SetActive(false);
+        
     }
     IEnumerator TransicionCuarto2()
     {
         //MicroPrincipal.enabled = false;
         Transicion_Jugador.SetActive(true);
         yield return new WaitForSeconds(1f);
-        ApagarVela();
+       
         yield return new WaitForSeconds(0.2f);
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         JugadorCompleto.transform.position= Pos2Sala.position;
@@ -124,6 +127,7 @@ public class PerderCol : MonoBehaviour
         Monstruo1.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2.8f;
         Monstruo2.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 4.5f;
         yield return new WaitForSeconds(0.2f);
+        ApagarVela();
         Transicion_Jugador.SetActive(true);
         CuartoBoss2.SetActive(false);
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
