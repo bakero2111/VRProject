@@ -5,17 +5,20 @@ using UnityEngine.AI;
 
 public class MangerGame : MonoBehaviour
 {
-    [Header("GANAR")]
+    [Header("GANAR 1")]
     public GameObject Enemigo1;
     public GameObject EnemigoText1;
     public Animator BossAnim1;
     public Material Desinte1;
+    public AudioClip Muerte1Sound;
+    [Header("GANAR 2")]
     public GameObject Enemigo2;
     public GameObject EnemigoText2;
     public GameObject CabezaText2;
     public GameObject CuernosText2;
     public Animator BossAnim2;
     public Material Desinte2;
+    public AudioClip Muerte2Sound;
 
     [Header("Luego De Ganar")]
     public GameObject PantallaGanar;
@@ -65,6 +68,8 @@ public class MangerGame : MonoBehaviour
     }
     public void MatarEnemigoFin()
     {
+        Enemigo1.GetComponent<AudioSource>().PlayOneShot(Muerte1Sound);
+        Enemigo2.GetComponent<AudioSource>().PlayOneShot(Muerte2Sound);
         //Enemigo1.GetComponent<DañoLuz>().IniciarDanho();
         BossAnim1.GetComponent<CapsuleCollider>().enabled = false;
         BossAnim2.GetComponent<CapsuleCollider>().enabled = false;
