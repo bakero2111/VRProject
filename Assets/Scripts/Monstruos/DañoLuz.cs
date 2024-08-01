@@ -14,6 +14,8 @@ public class DañoLuz : MonoBehaviour
     public Animator PersonajeHuesos;
     float VelGuardada;
     float VelCambiante;
+    public AudioClip ScreamDmg;
+    public AudioSource ParlanteScream;
     private void Start()
     {
         vida = DanhoLuz;
@@ -43,6 +45,7 @@ public class DañoLuz : MonoBehaviour
     public void IniciarDanho()
     {
         Debug.Log("No Vida");
+        ParlanteScream.PlayOneShot(ScreamDmg);
         PersonajeHuesos.SetTrigger("Stuneado");
         Monster1.DetenerBajoDaño(tiempoFeddBack);
         StartCoroutine(DanhoFeedBack(tiempoFeddBack));

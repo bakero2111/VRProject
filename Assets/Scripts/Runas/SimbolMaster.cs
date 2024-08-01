@@ -12,11 +12,16 @@ public class SimbolMaster : MonoBehaviour
     // Update is called once per frame
     public void ActivarSiguienteSimbolo()
     {
-        if(SimbolosObj[instanciaSimbolo] !=null && instanciaSimbolo<SimbolosObj.Count-1){
+        if(!SimbolosObj[instanciaSimbolo].activeSelf && instanciaSimbolo<SimbolosObj.Count-1){
             DonGM.ApagarVela();
             SimbolosObj[instanciaSimbolo+1].SetActive(true);
             instanciaSimbolo++;
             
+        }
+        else if(instanciaSimbolo>=SimbolosObj.Count-1){
+            DonGM.ApagarVela();
+            instanciaSimbolo=1;
+            SimbolosObj[instanciaSimbolo].SetActive(true);
         }
     }
     public void IniciarJuego()

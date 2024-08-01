@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4418106594966359395}
+  - component: {fileID: 6369013041822120327}
   m_Layer: 0
   m_Name: RunaParentLateral
   m_TagString: Untagged
@@ -35,6 +36,19 @@ Transform:
   - {fileID: 6306029854828953022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6369013041822120327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398574936287997444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c581223880df61438c1d60793f06386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rune: {fileID: 7681467275012840272}
 --- !u!1 &1727238508204687756
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +885,7 @@ MonoBehaviour:
   ParicMagic: {fileID: 2969724768012382684}
   ColisionesGen: {fileID: 4420871409111639760}
   Flecha: {fileID: 1727238508204687756}
+  MaxDistancia: 1.2
   particula_Explotion: {fileID: 5532894690271344006, guid: b08579e9e35f97c47936ac7aac9726c5, type: 3}
   tink: {fileID: 8300000, guid: d6b49b6b18c75b84d87416e0405f2341, type: 3}
 --- !u!1 &8558488553063681555

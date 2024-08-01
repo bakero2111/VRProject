@@ -17,41 +17,57 @@ public class RunaAObjetivo : MonoBehaviour
     public GameObject ColisionesGen;
     [Header("Señalizacion")]
     public GameObject Flecha;
+    public float MaxDistancia;
     [Header("FeedBack")]
     public GameObject particula_Explotion;
     public AudioClip tink;
     AudioSource Sonido;
     // si se lo lleva lejos
     Vector3 PosInicial;
-    void Start(){
-        Flecha.transform.forward = Objetivos[NumObjetivo].transform.position - Flecha.transform.position;
-        PosInicial = Flecha.transform.position;
-        Sonido=RunaMaster.GetComponent<AudioSource>();
+    bool FirstTimer=false;
+    void OnEnable(){
+        if(FirstTimer){
+        this.gameObject.transform.position= PosInicial;
+        }
     }
+    public void Start()
+    {
+        Sonido=RunaMaster.GetComponent<AudioSource>();
+        if(!FirstTimer){
+        PosInicial = this.transform.position;
+        }
+        NumObjetivo = 0;
+        
+        Flecha.transform.forward = Objetivos[NumObjetivo].transform.position - Flecha.transform.position;
+
+        if(FirstTimer){
+        this.gameObject.transform.position= PosInicial;
+        }
+    }
+    
     void AlcanzadosObj()
     {
         
         if(Objetivos.Count == NumObjetivo+1) // en caso de que solo sea un punto objetivo
         {
-            this.GetComponent<BoxCollider>().enabled = false;
-            Objetivos[0].GetComponent<MeshRenderer>().enabled = false;
-            Objetivos[0].GetComponent<BoxCollider>().enabled = false;
+            RunaMaster.SubirPunto();
+            //this.GetComponent<BoxCollider>().enabled = false;
+            //Objetivos[0].GetComponent<MeshRenderer>().enabled = false;
+            //Objetivos[0].GetComponent<BoxCollider>().enabled = false;
+            Objetivos[0].SetActive(false);
             RecorridoFinalizado =true;
             SeguimientoFeedBack();
-            //StartCoroutine(EmpezarBucle());
-            //this.gameObject.SetActive(false);
             UltObjetivoxd.SetActive(false);
-            RunaMaster.SubirPunto();
             this.gameObject.SetActive(false);
             Instantiate(particula_Explotion, transform.position, Quaternion.identity);
-
+            FirstTimer=true;
         }
         else if(Objetivos.Count >= 2 && Objetivos.Count != NumObjetivo + 1) // en caso de que hayan dos objetivos a mas
         {
-            //Objetivos[NumObjetivo].SetActive(false);
             Flecha.transform.forward = Objetivos[NumObjetivo].transform.position - Flecha.transform.position;
-            Objetivos[NumObjetivo].GetComponent<MeshRenderer>().enabled = false;
-            Objetivos[NumObjetivo].GetComponent<BoxCollider>().enabled=false;
+            //Objetivos[NumObjetivo].GetComponent<MeshRenderer>().enabled = false;
+           // Objetivos[NumObjetivo].GetComponent<BoxCollider>().enabled=false;
+           Objetivos[NumObjetivo].SetActive(false);
             NumObjetivo++;
             Objetivos[NumObjetivo].SetActive(true);
             Flecha.GetComponent<FlechaFeed>().ObjetivoFlecha = Objetivos[NumObjetivo];
@@ -60,14 +76,6 @@ public class RunaAObjetivo : MonoBehaviour
     }
     void SeguimientoFeedBack()
     {
-        /*
-        for(int i = 0; i < Objetivos.Count;i++)
-        {
-            Seguidor.transform.DOMove(Objetivos[i].transform.position, VelMovSeguidor)
-                .OnComplete(() => Debug.Log("llego Al Move"));
-            
-        }
-        */
 
         Vector3[] puntosDeCamino = Objetivos.Select(obj => obj.transform.position).ToArray();
         Seguidor.transform.DOPath(puntosDeCamino, VelMovSeguidor, PathType.Linear);
@@ -103,7 +111,7 @@ public class RunaAObjetivo : MonoBehaviour
         //ParicMagic.SetActive(false);
         ColisionesGen.SetActive(false);
         Objetivos[NumObjetivo].SetActive(false);
-        if (Vector3.Distance(this.transform.position, PosInicial) > 10f)
+        if (Vector3.Distance(this.transform.position, PosInicial) > MaxDistancia)
         {
             this.transform.position = PosInicial;
         }

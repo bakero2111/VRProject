@@ -12,12 +12,19 @@ public class RunaGM : MonoBehaviour
     {
         PuntosMaximos = InterruptoresRunas.Count;
     }
+    public void OnEnable()
+    {
+        PuntosVan = 0;
+        for (int i = 0; i < InterruptoresRunas.Count; i++)
+        {
+            InterruptoresRunas[i].SetActive(true);
+        }
+    }
     public void SubirPunto()
     {
         PuntosVan++;
         if (PuntosMaximos<=PuntosVan)
         {
-            Debug.Log("Quemarse Hechizo");
             simbolo1.Desintegrar();
         }
     }

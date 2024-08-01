@@ -13,27 +13,16 @@ public class Desintegracion : MonoBehaviour
     private void Start()
     {
         Animacion= GetComponent<Animator>();
-           // Colorrender = this.GetComponent<MeshRenderer>().material;
-            //Colorrender.SetFloat("_Weight", VerdeEsperanza);
-       
     }
     public void Desintegrar(){
-        //Animacion.enabled = true;
         Animacion.SetTrigger("Eliminar");
         StartCoroutine(EliminarObj());
     }
-    /*
-    void FixedUpdate(){
-        if(Eliminar){
-             Destroy(Padre);
-        }
-    }
-    */
     IEnumerator EliminarObj()
     {
 
         yield return new WaitForSeconds(4);
-        Destroy(Padre);
+        Padre.SetActive(false);
         ObjParentFinal.ActivarSiguienteSimbolo();
         if (Primero)
         {
