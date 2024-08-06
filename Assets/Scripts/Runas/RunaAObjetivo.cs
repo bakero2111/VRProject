@@ -15,9 +15,11 @@ public class RunaAObjetivo : MonoBehaviour
     GameObject UltObjetivoxd;
     public GameObject ParicMagic;
     public GameObject ColisionesGen;
+
     [Header("Señalizacion")]
     public GameObject Flecha;
     public float MaxDistancia;
+
     [Header("FeedBack")]
     public GameObject particula_Explotion;
     public AudioClip tink;
@@ -28,6 +30,7 @@ public class RunaAObjetivo : MonoBehaviour
     void OnEnable(){
         if(FirstTimer){
         this.gameObject.transform.position= PosInicial;
+            NumObjetivo=0;
         }
     }
     public void Start()
