@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.XR;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 //using UnityEngine.InputSystem;
 public class PrenderLuz : MonoBehaviour
@@ -14,8 +15,10 @@ public class PrenderLuz : MonoBehaviour
 
 
     public GameObject ColLinterna;
-
+    
     [Header("BateriaEstado")]
+    public Text PorcentajeUi;
+    float ReprePorciento;
     bool Prendido;
     public float BateriaTotal;
     float BateriaPorcent;
@@ -31,6 +34,7 @@ public class PrenderLuz : MonoBehaviour
     {
         _anim = this.GetComponent<Animator>();
         BateriaPorcent = BateriaTotal;
+
         for (intentos = 0; intentos < Puntos.Count; intentos++)
         {
             Colorrender = Puntos[intentos].GetComponent<MeshRenderer>().material;
@@ -52,6 +56,7 @@ public class PrenderLuz : MonoBehaviour
         if (Prendido)
         {
             BateriaPorcent -= Time.deltaTime;
+            ActualizarTextPorcent();
             if(BateriaPorcent< BateriaTotal * 0.75f)
             {
                 Colorrender = Puntos[0].GetComponent<MeshRenderer>().material;
@@ -87,7 +92,7 @@ public class PrenderLuz : MonoBehaviour
         }
         
     }
-
+    
     public void AgregarBateria()
     {
         BateriaPorcent = BateriaTotal;
@@ -129,4 +134,11 @@ public class PrenderLuz : MonoBehaviour
         ColLinterna.SetActive(false);
         Prendido = false;
     }
+    public void ActualizarTextPorcent()
+    {
+        ReprePorciento = (BateriaPorcent/BateriaTotal)*100;
+        int PorcentajeEntero =  (int)(Mathf.Clamp(ReprePorciento,0,100));
+        PorcentajeUi.text = PorcentajeEntero.ToString() + "%";
+        
+     }
 }
