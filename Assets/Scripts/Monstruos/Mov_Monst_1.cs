@@ -102,6 +102,7 @@ public class Mov_Monst_1 : MonoBehaviour
             if (_Estacion == 0 || _Estacion < (Puntos.Count - 1))
             {
                 _Estacion++;
+                PatronCamino1();
             }
             else
             {
