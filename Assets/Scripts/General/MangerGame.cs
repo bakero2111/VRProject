@@ -22,6 +22,7 @@ public class MangerGame : MonoBehaviour
 
     [Header("Luego De Ganar")]
     public GameObject PantallaGanar;
+    public GameObject SimbolosParentaaa;
 
     [Header("Hora")]
     public AudioClip Campanero;
@@ -98,6 +99,8 @@ public class MangerGame : MonoBehaviour
         Enemigo2.SetActive(false);
         yield return new WaitForSeconds(2);
         PantallaGanar.SetActive(true);
+        yield return new WaitForSeconds(1);
+         SimbolosParentaaa.SetActive(false);
     }
     
 }
