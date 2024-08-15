@@ -838,7 +838,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -858,11 +864,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 3ae2715f-ecd3-49aa-adb2-4cee64affec3
+  cloudProjectId: 81dbe50c-1f8d-445f-b093-00155e52af42
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: TerrorGame
-  organizationId: volt20
+  organizationId: bakero2111
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
