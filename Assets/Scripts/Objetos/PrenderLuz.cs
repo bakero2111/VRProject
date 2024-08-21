@@ -81,7 +81,7 @@ public class PrenderLuz : MonoBehaviour
                 Vector4 colorHDR = new Vector4(RojoVino.r * IntensidadHDR, RojoVino.g * IntensidadHDR, RojoVino.b * IntensidadHDR, RojoVino.a);
                 Colorrender.SetColor("_EmissionColor", colorHDR);
             }
-            if (BateriaPorcent < BateriaTotal * 0.05f)
+            if (BateriaPorcent < BateriaTotal * 0.1f)
             {
                 Colorrender = Puntos[3].GetComponent<MeshRenderer>().material;
                 Colorrender.SetColor("_Color", RojoVino);
@@ -110,7 +110,7 @@ public class PrenderLuz : MonoBehaviour
        
         float triggerValue = ActivarLinternaCntrol.action.ReadValue<float>();
         float triggerValueDere = Derecha_ActivarLinternaCntrol.action.ReadValue<float>();
-        if (triggerValue >= 0.1f|| triggerValueDere>=0.1f)
+        if ((triggerValue >= 0.1f|| triggerValueDere>=0.1f)&& BateriaPorcent >0)
         {
             ColLinterna.SetActive(true);
             Prendido = true;
