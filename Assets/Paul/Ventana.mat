@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ventana
-  m_Shader: {fileID: -6465566751694194690, guid: 925f372490d9c054a852b97f6e0a6df7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6c274218436fed745a442f82e10df5f2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -63,6 +63,22 @@ Material:
         m_Texture: {fileID: 2800000, guid: 527786d8e5168f942816ff157874102a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ventana:
+        m_Texture: {fileID: 2800000, guid: 527786d8e5168f942816ff157874102a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
@@ -78,10 +94,12 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Transparencia: 0.83
+    - _Transparencia: 0.32
     - _Transparency: 0
     - _UVSec: 0
     - _ZWrite: 1
@@ -89,8 +107,22 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MultColor: {r: 0.6981132, g: 0.65876544, b: 0.36552152, a: 0}
     - _MultiColor: {r: 0.066037714, g: 0.024373569, b: 0.0058561713, a: 0.98039216}
   m_BuildTextureStacks: []
+--- !u!114 &3947083370393160026
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
 --- !u!114 &9171956613969737820
 MonoBehaviour:
   m_ObjectHideFlags: 11
