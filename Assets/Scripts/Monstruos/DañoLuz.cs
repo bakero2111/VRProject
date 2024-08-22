@@ -33,7 +33,7 @@ public class DañoLuz : MonoBehaviour
         }
         if(BajoLuz&&!EnDanho)
         {
-            this.gameObject.GetComponent<NavMeshAgent>().speed = 0.78f;
+            this.gameObject.GetComponent<NavMeshAgent>().speed = 0.01f;
         }
         else if(BajoLuz&&EnDanho){
             this.gameObject.GetComponent<NavMeshAgent>().speed = VelGuardada+1.5f;
@@ -44,12 +44,13 @@ public class DañoLuz : MonoBehaviour
     }
     public void IniciarDanho()
     {
+        
+        this.GetComponent<CapsuleCollider>().enabled = false;
+        PersonajeHuesos.SetTrigger("Stuneado");
         Debug.Log("No Vida");
         ParlanteScream.PlayOneShot(ScreamDmg);
-        PersonajeHuesos.SetTrigger("Stuneado");
         Monster1.DetenerBajoDaño(tiempoFeddBack);
         StartCoroutine(DanhoFeedBack(tiempoFeddBack));
-        this.GetComponent<CapsuleCollider>().enabled = false;
     }
     IEnumerator DanhoFeedBack(int tempo)
     {
