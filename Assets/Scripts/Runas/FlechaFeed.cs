@@ -17,4 +17,6 @@ public class FlechaFeed : MonoBehaviour
     {
         this.transform.forward = ObjetivoFlecha.transform.position-this.transform.position;
     }
+   
+    
 }

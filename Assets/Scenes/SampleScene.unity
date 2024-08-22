@@ -24812,6 +24812,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9426c2dc4bf09054ca0b38cb83d6846b, type: 3}
   m_PrefabInstance: {fileID: 688438912}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &694166705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3044941929422306367, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+  m_PrefabInstance: {fileID: 2136915704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &694166711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694166705}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &697985217
 GameObject:
   m_ObjectHideFlags: 0
@@ -34180,7 +34212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4924506573850889901, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_LineOriginTransform
@@ -43081,7 +43113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 122084618895949332, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 724666597063956618, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_Layer
@@ -54888,6 +54920,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 744775840667417885, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1286359900367235112, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19099998
@@ -54957,6 +54993,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2548933278078587776, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.030759884
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548933278078587776, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.208
       objectReference: {fileID: 0}
@@ -54966,11 +55006,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2548933278078587776, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 2815126511651136954, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193636814327861986, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.030759884
       objectReference: {fileID: 0}
     - target: {fileID: 3193636814327861986, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54982,7 +55026,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3193636814327861986, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531831596301373348, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838238527469235551, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.030759884
       objectReference: {fileID: 0}
     - target: {fileID: 3838238527469235551, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54994,7 +55046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838238527469235551, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 4736358774120467314, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_LocalScale.z
@@ -55038,7 +55090,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 56054d27b8a685b4ba67a2396a261b7a, type: 2}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_FocusMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_TrackScale
@@ -55046,7 +55098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_MovementType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_TrackPosition
@@ -55066,7 +55118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_UseDynamicAttach
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_AllowGazeAssistance
@@ -55074,11 +55126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_MatchAttachPosition
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_MatchAttachRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_AllowGazeInteraction
@@ -55086,7 +55138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_Colliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_SnapToColliderVolume
@@ -55122,7 +55174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_ReinitializeDynamicAttachEverySingleGrab
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8167537290662177796, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       propertyPath: m_StartingSingleGrabTransformers.Array.size
@@ -55363,6 +55415,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7560347902590958562, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
       insertIndex: -1
       addedObject: {fileID: 193489592}
+    - targetCorrespondingSourceObject: {fileID: 3044941929422306367, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 694166711}
   m_SourcePrefab: {fileID: 100100000, guid: 910d2f9ed75cfc349927122c50f18736, type: 3}
 --- !u!1001 &96689087012800714
 PrefabInstance:

@@ -40,4 +40,11 @@ public class MantenerEjeZ : MonoBehaviour
             Setear = true;
         }
     }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag=="Runa/Objetivo")
+        {
+            Debug.Log("aaaaaaaaaaaaaa");
+        }
+    }
 }
