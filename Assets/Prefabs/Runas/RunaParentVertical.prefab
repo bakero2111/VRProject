@@ -377,7 +377,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2337250055449871249}
         m_TargetAssemblyTypeName: RunaAObjetivo, Assembly-CSharp
         m_MethodName: ActivarCamino
         m_Mode: 1
@@ -389,7 +389,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1544122970351455586}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: EnMovimientoaa
         m_Mode: 1
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2337250055449871249}
         m_TargetAssemblyTypeName: RunaAObjetivo, Assembly-CSharp
         m_MethodName: DesactivarCamino
         m_Mode: 1
@@ -416,7 +416,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1544122970351455586}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: terminarMov
         m_Mode: 1
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_FocusEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1544122970351455586}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: EnMovimientoaa
         m_Mode: 1
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Activated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2337250055449871249}
         m_TargetAssemblyTypeName: RunaAObjetivo, Assembly-CSharp
         m_MethodName: ActivarCamino
         m_Mode: 1
@@ -467,7 +467,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1544122970351455586}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: EnMovimientoaa
         m_Mode: 1
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1544122970351455586}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: terminarMov
         m_Mode: 1

@@ -31,25 +31,25 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.48333332
-        value: 0.054924797
-        inSlope: 0.18057467
-        outSlope: 0.18057467
+        time: 0.31666666
+        value: 0.056
+        inSlope: 0.27428573
+        outSlope: 0.27428573
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.2166667
-        value: 0.35200003
-        inSlope: 0.62312657
-        outSlope: 0.62312657
+        time: 0.81666666
+        value: 0.36
+        inSlope: 0.73558444
+        outSlope: 0.73558444
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
+        time: 1.6
         value: 1
         inSlope: 0
         outSlope: 0
@@ -60,7 +60,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Weight
+    attribute: material._ValorDesolucion
     path: 
     classID: 23
     script: {fileID: 0}
@@ -75,7 +75,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 2303899636
+      attribute: 2298624991
       script: {fileID: 0}
       typeID: 23
       customType: 22
@@ -88,7 +88,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 1.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -118,25 +118,25 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.48333332
-        value: 0.054924797
-        inSlope: 0.18057467
-        outSlope: 0.18057467
+        time: 0.31666666
+        value: 0.056
+        inSlope: 0.27428573
+        outSlope: 0.27428573
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.2166667
-        value: 0.35200003
-        inSlope: 0.62312657
-        outSlope: 0.62312657
+        time: 0.81666666
+        value: 0.36
+        inSlope: 0.73558444
+        outSlope: 0.73558444
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2
+        time: 1.6
         value: 1
         inSlope: 0
         outSlope: 0
@@ -147,7 +147,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: material._Weight
+    attribute: material._ValorDesolucion
     path: 
     classID: 23
     script: {fileID: 0}

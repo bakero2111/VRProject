@@ -753,7 +753,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8918893725944622673}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: EnMovimientoaa
         m_Mode: 1
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 420119452169758083}
         m_TargetAssemblyTypeName: RunaAObjetivo, Assembly-CSharp
         m_MethodName: DesactivarCamino
         m_Mode: 1
@@ -780,7 +780,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8918893725944622673}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: terminarMov
         m_Mode: 1
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_FocusEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8918893725944622673}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: EnMovimientoaa
         m_Mode: 1
@@ -831,7 +831,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8918893725944622673}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: EnMovimientoaa
         m_Mode: 1
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8918893725944622673}
         m_TargetAssemblyTypeName: MantenerEjeZ, Assembly-CSharp
         m_MethodName: terminarMov
         m_Mode: 1

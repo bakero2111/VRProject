@@ -124,7 +124,7 @@
             float radius = lerp(_R, 0, t);
             
 
-            if(t > 0){
+            if(t > 0){ //PARTICULAS
                 float3 look = _WorldSpaceCameraPos - p;
                 look = normalize(look);
 
@@ -168,7 +168,7 @@
                 triStream.RestartStrip();
             }
 
-            for(int j = 0; j<3; j++){
+            for(int j = 0; j<3; j++){ //CARCOMIDO TRANSPARENCIA
                 g2f o;
                 o.worldPos = UnityObjectToClipPos(IN[j].objPos);
                 o.uv = TRANSFORM_TEX(IN[j].uv, _MainTex);
