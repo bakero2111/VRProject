@@ -10,13 +10,29 @@ public class Desintegracion : MonoBehaviour
     public GameObject Padre;
     public SimbolMaster ObjParentFinal;
     public bool Primero=false;
+    public GameObject Ps_Entrada;
+    public GameObject Ps_Salida;
     private void Start()
     {
         Animacion= GetComponent<Animator>();
     }
+    public void ParticulasEntrada()
+    {
+        Ps_Salida.SetActive(true);
+    }
     public void Desintegrar(){
+        
         Animacion.SetTrigger("Eliminar");
-        StartCoroutine(EliminarObj());
+       // StartCoroutine(EliminarObj());
+    }
+    public void SiguienteSimbolo()
+    {
+        Padre.SetActive(false);
+        ObjParentFinal.ActivarSiguienteSimbolo();
+        if (Primero)
+        {
+            ObjParentFinal.IniciarJuego();
+        }
     }
     IEnumerator EliminarObj()
     {

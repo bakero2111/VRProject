@@ -159,11 +159,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BordeEje: {r: 1, g: 1, b: 0, a: 0}
-    - _BordesColor: {r: 1.5617899, g: 0.07333581, b: 0, a: 0}
+    - _BordeEje: {r: 1, g: 1, b: 0.01, a: 0}
+    - _BordesColor: {r: 1023.9993, g: 48.251274, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorBordesDisolvente: {r: 0.6431373, g: 0.28507605, b: 0.019607825, a: 0}
-    - _ColorMult: {r: 0.49056602, g: 0, b: 0, a: 0}
+    - _ColorBordesDisolvente: {r: 0.05490196, g: 0.003921569, b: 0, a: 1}
+    - _ColorMult: {r: 0.050980393, g: 0, b: 0, a: 0}
     - _Direcciones: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
