@@ -159,7 +159,7 @@ Material:
     - _BordesColor: {r: 1023.9993, g: 48.251274, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorBordesDisolvente: {r: 0.05660376, g: 0.0039507877, b: 0, a: 1}
-    - _ColorMult: {r: 0.04927646, g: 0, b: 0, a: 0}
+    - _ColorMult: {r: 0.2264151, g: 0.017942311, b: 0.017942311, a: 1}
     - _Direcciones: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

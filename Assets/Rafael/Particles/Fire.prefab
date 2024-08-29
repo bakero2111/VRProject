@@ -4970,9 +4970,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.5849056, g: 0.23056744, b: 0.013243129, a: 1}
-  m_Intensity: 18.11
-  m_Range: 8.53
+  m_Color: {r: 0.58431375, g: 0.21131387, b: 0.011764696, a: 1}
+  m_Intensity: 47.55
+  m_Range: 12.1
   m_SpotAngle: 45
   m_InnerSpotAngle: 1
   m_CookieSize: 10
@@ -4980,10 +4980,10 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.762
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 1.73
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5010,7 +5010,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 4.22, y: 4.03}
   m_BounceIntensity: 0
