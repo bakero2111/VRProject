@@ -46,7 +46,7 @@ public class PerderCol : MonoBehaviour
     {
         if (Oportunidades < Vez && !CuartoBoss1.activeSelf && !CuartoBoss2.activeSelf)
         {
-            Monstruo2.GetComponent<DañoLuz>().IniciarDanho();
+            Monstruo2.GetComponent<DaÃ±oLuz>().IniciarDanho();
             StartCoroutine(TransicionCuarto1());
         }
         else if (Oportunidades >= Vez && !Perdida && !CuartoBoss1.activeSelf && !CuartoBoss2.activeSelf)
@@ -59,7 +59,7 @@ public class PerderCol : MonoBehaviour
     {
         if (Oportunidades < Vez && !CuartoBoss1.activeSelf&&!CuartoBoss2.activeSelf)
         {
-            Monstruo1.GetComponent<DañoLuz>().IniciarDanho();
+            Monstruo1.GetComponent<DaÃ±oLuz>().IniciarDanho();
             StartCoroutine(TransicionCuarto2());
         }
         else if(Oportunidades >= Vez && !Perdida && !CuartoBoss1.activeSelf && !CuartoBoss2.activeSelf)
@@ -83,7 +83,6 @@ public class PerderCol : MonoBehaviour
     {
        // MicroPrincipal.enabled = false;
         Transicion_Jugador.SetActive(true);
-        yield return new WaitForSeconds(1f);
         
         yield return new WaitForSeconds(0.2f);
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
@@ -111,7 +110,6 @@ public class PerderCol : MonoBehaviour
     {
         //MicroPrincipal.enabled = false;
         Transicion_Jugador.SetActive(true);
-        yield return new WaitForSeconds(1f);
        
         yield return new WaitForSeconds(0.2f);
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
