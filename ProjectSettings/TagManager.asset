@@ -11,6 +11,8 @@ TagManager:
   - Runa/Objeto
   - Perder
   - Piso
+  - jugarB
+  - salirB
   layers:
   - Default
   - TransparentFX
