@@ -6,6 +6,7 @@ public class PerderCol : MonoBehaviour
 {
     [Header("Oportunidades")]
     public List<GameObject> Velas = new List<GameObject>();
+    public List<GameObject> FinJuego;
     int Vez;
     int Oportunidades;
     bool Perdida=false;
@@ -55,6 +56,7 @@ public class PerderCol : MonoBehaviour
             StartCoroutine(TransicionFinalPerder());
         }
     }
+    
     public void PerderMonster2()
     {
         if (Oportunidades < Vez && !CuartoBoss1.activeSelf&&!CuartoBoss2.activeSelf)
@@ -78,6 +80,13 @@ public class PerderCol : MonoBehaviour
             Oportunidades++;
         }
         
+    }
+    public void FinJuegoApagar()
+    {
+        for (int i = 0; i < FinJuego.Count; i++)
+        {
+            FinJuego[i].gameObject.SetActive(true);
+        }
     }
     IEnumerator TransicionCuarto1()
     {
@@ -154,6 +163,7 @@ public class PerderCol : MonoBehaviour
         Transicion_Jugador.GetComponent<Animator>().SetTrigger("Apagar");
         yield return new WaitForSeconds(0.4f);
         //MicroPrincipal.enabled = true;
+        FinJuegoApagar();
         Transicion_Jugador.SetActive(false);
         SimbolosTotalesParent.SetActive(false);
     }

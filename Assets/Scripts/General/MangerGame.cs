@@ -24,6 +24,8 @@ public class MangerGame : MonoBehaviour
     public GameObject PantallaGanar;
     public GameObject SimbolosParentaaa;
 
+    public List<GameObject> FinJuego;
+
     [Header("Hora")]
     public AudioClip Campanero;
     AudioSource Bocina;
@@ -88,6 +90,13 @@ public class MangerGame : MonoBehaviour
         StartCoroutine(Ganar());
         
     }
+    public void FinJuegoApagar()
+    {
+        for (int i = 0; i < FinJuego.Count; i++)
+        {
+            FinJuego[i].gameObject.SetActive(true);
+        }
+    }
     IEnumerator Ganar()
     {
         EnemigoText1.GetComponent<Animator>().enabled = true;
@@ -98,9 +107,9 @@ public class MangerGame : MonoBehaviour
         Enemigo1.SetActive(false);
         Enemigo2.SetActive(false);
         yield return new WaitForSeconds(2);
+        FinJuegoApagar();
         PantallaGanar.SetActive(true);
-        yield return new WaitForSeconds(1);
-         SimbolosParentaaa.SetActive(false);
+        SimbolosParentaaa.SetActive(false);
     }
     
 }
